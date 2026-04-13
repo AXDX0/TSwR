@@ -6,6 +6,15 @@ Ramię robota z zamontowaną paletką będzie odbijać piłeczki do tenisa stoł
 ## Dlaczego to jest fajne:
 Bo ping-pong jest fajny!
 
+## Co i jak:
+
+
+## W jaki sposób:
+
+
+## Kamień milowy:
+Środowisko oddziałujące z agentem.
+
 ## Wejścia:
 – obraz z kamery
 
@@ -17,6 +26,9 @@ Zastosowane zostanie podejście typu czarna skrzynka. Algorytm sterujący zostan
 
 ## Symulator:
 Jako symulator posłuży biblioteka PyBullet lub MuJoCo.
+
+## Wizualizacja:
+
 
 ## Biblioteki:
 - NumPy
