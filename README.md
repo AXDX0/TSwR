@@ -6,14 +6,14 @@ Ramię robota z zamontowaną paletką będzie odbijać piłeczki do tenisa stoł
 ## Dlaczego to jest fajne:
 Bo ping-pong jest fajny!
 
-## Co i jak:
+<!---
+[//]: <> ## Co i jak:
 
-
-## W jaki sposób:
-
+[//]: <> ## W jaki sposób:
+-->
 
 ## Kamień milowy:
-Środowisko oddziałujące z agentem.
+Środowisko oddziałujące z agentem. W środowisku będą znajdować się takie obiekty jak stół, piłeczki pingpongowe i osadzone w nim będzie ramię robota z paletką.
 
 ## Wejścia:
 – obraz z kamery
