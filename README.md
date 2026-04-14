@@ -21,14 +21,18 @@ Bo ping-pong jest fajny!
 ## Wyjścia:
 – momenty lub przyśpieszenia przegubów robota
 
-## Model:
-Zastosowane zostanie podejście typu czarna skrzynka. Algorytm sterujący zostanie wytrenowany z pomocą uczenia przez wzmacnianie (RL).
+## Model
+Projekt opiera się na dwóch modelach wirtualnych:
+1. **Model Robota:** Zastosujemy 7-osiowe ramię **Franka Emika Panda**. Zamiast tworzyć model od zera, wykorzystamy dostrojony model w formacie MJCF (XML) z oficjalnego repozytorium *MuJoCo Menagerie*. Gwarantuje to poprawne odwzorowanie mas, bezwładności oraz fizycznych limitów przegubów (prędkości i momentów sił). Do efektora końcowego ramienia zostanie wirtualnie "przymocowana" paletka do tenisa stołowego.
+2. **Model Piłeczki:** Najważniejszym elementem modelu piłeczki będzie dostrojenie parametru *restitution* (współczynnik sprężystości), aby zjawisko odbicia od blatu oraz od paletki zachowywało się zgodnie z prawami fizyki świata rzeczywistego.
 
-## Symulator:
-Jako symulator posłuży biblioteka PyBullet lub MuJoCo.
+## Symulator
+W projekcie wykorzystywany jest silnik fizyczny **MuJoCo**. Wybór ten podyktowany jest specyfiką tenisa stołowego – MuJoCo charakteryzuje się wyjątkowo dokładnym i szybkim rozwiązywaniem równań dynamiki kontaktów, co jest kluczowe przy modelowaniu sprężystych odbić małej piłeczki z dużą prędkością.
 
-## Wizualizacja:
-
+## Wizualizacja
+Zanim wprowadzony zostanie algorytm Reinforcement Learningu, środowisko musi przejść  przez walidację fizyczną i kinematyczną.
+* **Wizualizacja:** Do podglądu symulacji wykorzystywany będzie natywny moduł `mujoco.viewer`. Pozwala on na renderowanie sceny 3D w czasie rzeczywistym oraz interaktywne sprawdzanie limitów przegubów z poziomu interfejsu graficznego.
+* **Sposób walidacji:** Poprawność modelu zostanie zweryfikowana poprzez wymuszenie ruchu ramienia za pomocą prostych, deterministycznych skryptów w Pythonie (bez udziału AI). Skrypt wygeneruje trajektorię (np. ruch harmoniczny wybranego przegubu), która doprowadzi do uderzenia w spadającą piłeczkę. Udana wizualizacja realistycznego toru lotu piłki po zderzeniu z paletką (brak zjawiska "przenikania" obiektów) będzie dowodem na stabilność modelu.
 
 ## Biblioteki:
 - NumPy
